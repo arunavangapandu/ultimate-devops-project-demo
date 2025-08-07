@@ -87,7 +87,7 @@ jobs:
             git add kubernetes/productcatalog/deploy.yaml
             git commit -m "Update product catalog service image tag to ${{ secrets.DOCKER_USERNAME }}/product-catalog-service:${{ github.run_id }}"
             
-            git pull --rebase origin main
+            git pull --rebase --autostash origin main
             git push origin HEAD:main
 
           
